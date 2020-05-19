@@ -6,7 +6,7 @@ Laravel voicecall package allows you to make voice calls with different provider
 composer require chocofamilyme/laravel-voicecall
 ```
   
-# Publishing the configuration (optional)  
+# Publishing the configuration
 ```bash  
 php artisan vendor:publish --provider="Chocofamilyme\LaravelVoiceCall\Providers\VoicecallServiceProvider"
 ```
