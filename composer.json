@@ -39,7 +39,7 @@
   "extra": {
     "laravel": {
       "providers": [
-        "Chocofamilyme\\LaravelVoiceCall\\Providers\\VoiceCallServiceProvider"
+        "Chocofamilyme\\LaravelVoiceCall\\VoiceCallServiceProvider"
       ]
     }
   },
