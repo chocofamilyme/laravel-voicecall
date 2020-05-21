@@ -8,7 +8,11 @@ composer require chocofamilyme/laravel-voicecall
   
 # Publishing the configuration
 ```bash  
-php artisan vendor:publish --provider="Chocofamilyme\LaravelVoiceCall\Providers\VoicecallServiceProvider"
+php artisan vendor:publish --provider="Chocofamilyme\LaravelVoiceCall\VoicecallServiceProvider"
 ```
   
-# Configurations
+# Examples
+### make voice call
+```php  
+VoicecallService::create()->call();
+```
