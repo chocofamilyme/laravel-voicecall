@@ -9,7 +9,7 @@ class MockProvider extends BaseProvider
      */
     public function getProvider(): string
     {
-        return '';
+        return 'zvonobot';
     }
 
     public function call(array $phones): array
