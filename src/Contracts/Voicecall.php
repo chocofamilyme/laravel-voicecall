@@ -6,5 +6,5 @@ interface Voicecall
 {
     public function getProvider(): string;
 
-    public function call(array $phones): void;
+    public function call(array $phones): array;
 }

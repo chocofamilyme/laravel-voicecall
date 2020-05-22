@@ -24,7 +24,7 @@ abstract class BaseProvider implements Voicecall
     {
         $this->config = config('voicecall.providers')[$this->getProvider()] ?? [];
         $this->guzzleClient = new Client([
-            'base_url' => $this->config['base_url'],
+            'base_uri' => $this->config['base_uri'],
         ]);
     }
 }

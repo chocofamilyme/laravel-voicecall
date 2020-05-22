@@ -12,8 +12,8 @@ class MockProvider extends BaseProvider
         return '';
     }
 
-    public function call(): void
+    public function call(array $phones): array
     {
-        //
+        return [];
     }
 }
