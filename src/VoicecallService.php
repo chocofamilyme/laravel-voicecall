@@ -29,10 +29,10 @@ class VoicecallService
 
     /**
      * @param array $phones
-     * @return void
+     * @return array
      */
-    public function call(array $phones): void
+    public function call(array $phones): array
     {
-        $this->voicecall->call($phones);
+        return $this->voicecall->call($phones);
     }
 }
