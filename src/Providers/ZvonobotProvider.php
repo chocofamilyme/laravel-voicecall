@@ -24,11 +24,13 @@ class ZvonobotProvider extends BaseProvider
     {
         try {
             $res = $this->guzzleClient->post('create', [
-                'apiKey' => $this->config['api_key'],
-                'phones' => $phones,
-                'record' => [
-                    'id' => $this->config['record_id'],
-                ]
+                'json' => [
+                    'apiKey' => $this->config['api_key'],
+                    'phones' => $phones,
+                    'record' => [
+                        'id' => $this->config['record_id'],
+                    ],
+                ],
             ]);
 
             return json_decode($res->getBody()->getContents(), true);
