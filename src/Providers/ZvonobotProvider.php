@@ -2,9 +2,9 @@
 
 namespace Chocofamilyme\LaravelVoiceCall\Providers;
 
-use Chocofamilyme\LaravelVoiceCall\Exceptions\VoicecallException;
+use Chocofamilyme\LaravelVoiceCall\Exceptions\VoicecallClientErrorException;
+use Chocofamilyme\LaravelVoiceCall\Exceptions\VoicecallFatalErrorException;
 use GuzzleHttp\Exception\ClientException;
-use Throwable;
 
 class ZvonobotProvider extends BaseProvider
 {
@@ -19,6 +19,8 @@ class ZvonobotProvider extends BaseProvider
     /**
      * @param array $phones
      * @return array
+     * @throws VoicecallClientErrorException
+     * @throws VoicecallFatalErrorException
      */
     public function call(array $phones): array
     {
@@ -35,9 +37,9 @@ class ZvonobotProvider extends BaseProvider
 
             return json_decode($res->getBody()->getContents(), true);
         } catch (ClientException $exception) {
-            throw new VoicecallException($this->getClientExceptionMessage($exception));
-        } catch (Throwable $exception) {
-            throw new VoicecallException($exception->getMessage());
+            throw new VoicecallClientErrorException($this->getClientExceptionMessage($exception));
+        } catch (\Throwable $exception) {
+            throw new VoicecallFatalErrorException($exception->getMessage());
         }
     }
 

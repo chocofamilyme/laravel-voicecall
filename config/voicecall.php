@@ -3,6 +3,7 @@
 use Chocofamilyme\LaravelVoiceCall\Providers\ZvonobotProvider;
 
 return [
+    'enabled' => env('VOICECALL_ENABLED', false),
     'default_provider' => env('VOICECALL_DEFAULT_PROVIDER', 'zvonobot'),
     'providers' => [
         'zvonobot' => [
